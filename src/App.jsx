@@ -38,7 +38,7 @@ const App = () => {
     <>
       <div className='min-h-screen flex items-center justify-start pt-15 flex-col '>
 
-        <div className="bg-white border rounded-lg shadow-lg flex flex-col items-center p-6 overflow-hidden">
+        <div className="bg-white border rounded-lg shadow-lg flex flex-col items-center p-6">
           {/* TODO TEXT */}
 
           <div className='mt-10 text-2xl'>
@@ -48,15 +48,15 @@ const App = () => {
           {/* INPUT
 
         */}
-          <div className=''>
-            <input type="text" value={input} onChange={(e) => { setInput(e.target.value) }} className='bg-red-50 border-solid rounded-lg h-10 w-100 m-5 pl-3' placeholder='Enter task' />
-            <button className='bg-red-200 border-solid rounded-lg p-2.5 text-md pl-2' onClick={addTask}>Add</button>
+          <div className='flex flex-col sm:flex-row gap-3 w-full max-w-md mt-5'>
+            <input type="text" value={input} onChange={(e) => { setInput(e.target.value) }} className='bg-red-50 border rounded-lg h-10 pl-3 flex-1 w-full' placeholder='Enter task' />
+            <button className='bg-red-200 rounded-lg px-4 h-10 whitespace-nowrap' onClick={addTask}>Add</button>
           </div>
 
           {/* CONTENT */}
 
 
-          <div>
+          <div className=''>
             <ul >
               {todos.map((todo) => (
                 <li key={todo.id} className='flex justify-between gap-20 mb-5 items-center'>
